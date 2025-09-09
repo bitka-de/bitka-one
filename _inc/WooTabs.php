@@ -1,5 +1,6 @@
 <?php
 
+namespace Bitka;
 /**
  * WooTabs – Admin-Seite für WooCommerce Tabs mit Gutenberg-Unterstützung
  */

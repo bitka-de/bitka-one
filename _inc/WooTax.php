@@ -1,5 +1,5 @@
 <?php
-
+namespace Bitka;
 
 class WooTax
 {

@@ -1,5 +1,7 @@
 <?php
 
+namespace Bitka;
+
 class Theme
 {
     public function __construct()

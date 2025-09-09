@@ -1,5 +1,5 @@
 <?php
-
+namespace Bitka\Inc;
 
 class WooShipping
 {

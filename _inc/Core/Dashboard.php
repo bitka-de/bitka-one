@@ -1,8 +1,8 @@
 <?php
 
-declare(strict_types=1);
+namespace Bitka\Core;
 
-include_once get_template_directory() . '/inc/core/DataLoader.php';
+use DataLoader;
 
 class Dashboard
 {

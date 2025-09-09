@@ -1,13 +1,15 @@
 <?php
 
-require_once __DIR__ . '/WooShipping.php';
+namespace Bitka;
+
+// use WooShipping; // Removed or update this line if WooShipping is in a different namespace
+use Bitka\WooShipping; // Update this line if WooShipping is in the Bitka namespace
 
 class Woo
 {
     public function __construct()
     {
-        // Initialisiere WooShipping
-        new WooShipping();
+
     }
 
 
