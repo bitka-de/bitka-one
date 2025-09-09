@@ -1,0 +1,45 @@
+# --- WordPress Theme: .gitignore (Bitka One) ---
+
+# System/IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Node/JS
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Composer
+vendor/
+composer.lock
+
+# Build/Cache
+dist/
+build/
+*.log
+*.tmp
+*.cache
+
+# WordPress uploads (falls versehentlich im Theme)
+uploads/
+*.sql
+
+# SASS/SCSS Cache
+.sass-cache/
+
+# Env/Secrets
+.env
+.env.*
+
+# OS generated files
+ehthumbs.db
+Icon?
+
+# Backup files
+*~
+*.bak
+*.swp
+*.swo
