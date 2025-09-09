@@ -1,0 +1,146 @@
+:root {
+  --width-max: 75rem;
+  --rounded: 0.5rem;
+  --color-brand: #0073aa;
+}
+
+#wpcontent {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#bitka-dashboard {
+  max-width: var(--width-max);
+  margin-inline: auto;
+  font-family: inherit;
+  min-height: 100vh;
+}
+
+#bitka-dashboard > * {
+  box-sizing: border-box;
+}
+
+.bitka-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1.5px solid #e0e7ef;
+  background: linear-gradient(90deg, #ffffff 0%, transparent 100%);
+  border-radius: 0 0 var(--rounded) var(--rounded);
+}
+
+.bitka-dashboard__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--rounded);
+  padding: 0.5rem;
+  margin: 0.5rem;
+  box-shadow: 0 2px 8px rgba(30, 41, 59, 0.1);
+  background: #fff;
+  margin-right: 2rem;
+  * {
+    fill: var(--color-brand);
+  }
+}
+
+.bitka-dashboard__nav {
+  display: flex;
+  gap: 0.75rem;
+  margin-right: 0.75rem;
+}
+.bitka-dashboard__nav a {
+  color: #1b609c;
+  text-decoration: none;
+  font-size: 1.08em;
+  padding: 0.7em;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+.bitka-dashboard__nav a:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #0a2c4d;
+}
+
+.bitka-dashboard-main {
+  display: flex;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+
+.bitka-dashboard__section {
+  flex: 2 1 0%;
+}
+
+.bitka-dashboard__sidebar {
+  flex: 1 1 0%;
+  min-width: 15rem;
+  max-width: 20rem;
+  padding-left: 1rem;
+  border-left: 1px solid #e0e7ef;
+}
+.bitka-dashboard__sidebar h3 {
+  margin-top: 0;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+.bitka-dashboard__sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0 0 0;
+}
+.bitka-dashboard__sidebar li {
+  margin-bottom: 0.7em;
+}
+.bitka-dashboard__sidebar a {
+  color: #0a2c4d;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+.bitka-dashboard__sidebar a:hover {
+  background: #e0e7ff;
+  color: #1b609c;
+}
+
+@media (max-width: 900px) {
+  #bitka-dashboard {
+    padding: 0 0 1.5rem 0;
+  }
+  .bitka-dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.2rem 1rem 1rem 1rem;
+  }
+  .bitka-dashboard-main {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.2rem 1rem;
+  }
+  .bitka-dashboard__section,
+  .bitka-dashboard__sidebar {
+    padding: 1.2rem 1rem;
+  }
+}
+
+
+
+.bitka-support-card_header{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+.bitka-card{
+  width: 100%;
+  background: linear-gradient(135deg, #fff 0%, transparent 100%);
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  padding: 1em;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+}

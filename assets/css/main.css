@@ -1,0 +1,868 @@
+:root {
+  --color-main: rgb(27, 96, 156);
+  --color-muted: rgba(0, 0, 0, 0.35);
+
+  --color-background: rgb(253, 255, 255);
+  --color-link: rgb(47, 47, 47);
+  --color-link-active: rgb(27, 96, 156);
+  --color-link-inactive: rgb(187, 223, 255);
+
+  --width-max: 75rem;
+}
+
+body {
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+  display: block;
+}
+
+.content-page {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.boxed-header {
+  width: 100vw;
+  margin: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(225, 225, 225, 0) 0%,
+    rgba(225, 225, 225, 1) 100%
+  );
+  padding: 0 1rem;
+  height: 4rem;
+  border-top: 0.5rem solid var(--color-main);
+}
+
+@media (max-width: 959px) {
+  .boxed-header .logo-header {
+    height: 5rem;
+    fill: var(--color-link);
+    padding: 0.5rem;
+    border: 1px solid #eee;
+    border-radius: 0 0 8px 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 50vw;
+    transform: translateX(-50%);
+    top: 0;
+    z-index: 800 !important;
+  }
+
+  .header-actions {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 960px) {
+  .meta-header {
+    height: 4.5rem;
+    margin-bottom: -2rem;
+    background-color: var(--color-main);
+  }
+
+  .boxed-header {
+    max-width: 75rem;
+    width: 100vw;
+    height: 4rem;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .boxed-header .logo-header {
+    height: 5rem !important;
+    fill: var(--color-link);
+    padding: 0.5rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-link {
+    color: var(--color-link);
+  }
+
+  .header-link-active {
+    color: var(--color-main);
+    font-weight: bold;
+  }
+}
+
+.main-footer {
+  background: var(--color-main);
+}
+
+.boxed-footer {
+  max-width: var(--width-max);
+  width: 100vw;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.address-footer {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 95%;
+  font-weight: 300;
+  font-style: normal;
+  color: white;
+}
+
+.boxed-footer h3 {
+  color: white;
+  letter-spacing: 0.05em;
+  font-size: 105%;
+  font-weight: 400;
+  margin: 0.75rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.boxed-footer h3 svg {
+  height: 1.5rem;
+  fill: rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s;
+}
+
+/* Drehe das SVG, wenn ein direktes Kind mit .footer-shop-links-active existiert */
+.boxed-footer h3:has(+ .footer-shop-links-active) svg {
+  transform: rotate(45deg);
+  opacity: 0.4;
+}
+
+.footer-shop-links {
+  opacity: 0.7;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  display: none;
+}
+
+.footer-shop-links li {
+  display: inline;
+}
+
+.footer-shop-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 95%;
+  font-weight: 300;
+  transition: color 0.2s;
+}
+
+.footer-shop-links a:hover,
+.footer-shop-links a:focus {
+  color: var(--color-link-inactive);
+  text-decoration: underline;
+}
+
+@media (min-width: 480px) {
+  .boxed-footer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .footer-shop-links {
+    display: inline;
+  }
+
+  .boxed-footer h3 svg {
+    display: none;
+  }
+}
+
+@media (min-width: 960px) {
+  .boxed-footer {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+.footer-shop-links-active {
+  display: block;
+}
+
+.wp-block-cover {
+  border-radius: 8px;
+}
+
+.hk-hero {
+  min-height: 40vh;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: var(--width-max);
+  margin-inline: auto;
+
+  .text-pill {
+    background: rgba(0, 0, 0, 0.061);
+    border-radius: 10rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: rgb(42, 42, 42);
+    display: inline-flex;
+    width: fit-content;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: var(--color-main);
+  }
+
+  .wp-block-media-text__media {
+    width: 100%;
+    img {
+      border-radius: 8px;
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .wp-block-media-text__content {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.puls-heart {
+  color: red;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-bottom: 1rem;
+  animation: pulsate 1s infinite;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+.hk-hello {
+  display: flex;
+  min-height: 40vh;
+  justify-items: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.02);
+  margin-block: 2rem;
+  padding: 2rem;
+  border-radius: 8px;
+
+  max-width: var(--width-max);
+  margin-inline: auto;
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: var(--color-main);
+  }
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-text);
+    max-width: 60ch;
+    text-wrap: balance;
+    line-height: 1.4;
+    margin-bottom: 1.1rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Bitka Theme Styles
+ */
+
+.bitka-categories-section {
+  margin-bottom: 2rem;
+  margin-block: 2rem;
+  background: rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  padding-block: 2rem;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: rgba(0, 0, 0, 0.35);
+    text-align: center;
+    position: relative;
+    margin-block: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 90vw;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  h2::before,
+  h2::after {
+    content: "";
+    display: block;
+    height: 1px;
+    flex-grow: 1;
+    width: auto;
+    margin: 0.5rem auto;
+    border-radius: 2px;
+  }
+
+  h2::before {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.1) 50%
+    );
+  }
+  h2::after {
+    background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.1) 50%
+    );
+  }
+}
+
+.bitka-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+  margin: 0 auto;
+  padding: 1rem;
+  overflow-x: auto;
+  max-width: 100vw;
+  max-width: var(--width-max);
+}
+.bitka-category {
+  background-color: rgb(234, 167, 80);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  img {
+    border-radius: 8px;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  strong {
+    display: block;
+    margin-top: 0.25rem;
+    font-weight: 600;
+  }
+}
+
+/** 
+* About Section
+*/
+
+.hk-about {
+  min-height: 40vh;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: var(--width-max);
+  margin-inline: auto;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: var(--color-main);
+  }
+
+  .wp-block-media-text__media {
+    width: 100%;
+    img {
+      border-radius: 8px;
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .wp-block-media-text__content {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-text);
+    max-width: 60ch;
+    text-wrap: balance;
+    line-height: 1.4;
+    margin-bottom: 1.1rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.breadcrumb {
+  padding: 0.25rem 1rem;
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  max-width: var(--width-max);
+  margin: 0 auto;
+  font-size: 90%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+
+.breadcrumb a {
+  color: var(--color-main);
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.logo_header {
+  height: 5rem !important;
+  fill: var(--color-link);
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-content {
+  max-width: var(--width-max);
+  margin-inline: auto;
+  padding: 1rem;
+  margin-block: 2rem;
+
+  .image-404 {
+    max-height: 50vh;
+    margin: 0 auto 0 auto;
+    display: block;
+  }
+
+  a {
+    display: inline-block;
+    margin: 1rem auto 0 auto;
+    padding: 0.75rem 2rem;
+    background: var(--color-main);
+    color: white;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    transition: background 0.3s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  }
+}
+
+.woo-content {
+  max-width: var(--width-max);
+  margin: 2rem auto;
+}
+
+/* Bitka WooCommerce Product Template Styles */
+.bitka-product {
+  max-width: var(--width-max);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+
+  .bitka-product-header {
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--color-main);
+    padding-bottom: 0.5rem;
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .bitka-product-main {
+    display: flex;
+    gap: 2rem;
+    margin-block: 1rem;
+
+    .bitka-product-main_gallery {
+      width: 26rem;
+      height: 26rem;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.bitka-product_title {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.bitka-product_meta {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+
+
+}
+
+.bitka-product_meta_item {
+  display: inline-flex;
+  align-items: center;
+  justify-items: start;
+  font-size: 0.875rem;
+  gap: .5rem;
+
+  svg {
+    height: 1rem;
+    fill: var(--color-muted);
+  }  
+}
+
+
+.bitka-popover::backdrop{
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+
+.bitka-popover:popover-open {
+    transition: opacity .15s ease, transform .15s ease;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    margin: 1.5rem 0;
+  }
+
+  thead th {
+    background: #f0f4f8;
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 2px solid #ccc;
+  }
+
+  tbody td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #fafafa;
+  }
+
+  tbody td:first-child {
+    font-weight: bold;
+  }
+
+
+
+
+
+/* ===== Clean Tabs (minimal) ============================================== */
+:root {
+  --bitka-accent: #111827;        /* Primärfarbe (Text/Active) */
+  --bitka-accent-weak: #6b7280;   /* Sekundär (Inaktiv) */
+  --bitka-border: #e5e7eb;        /* Linien */
+  --bitka-bg: transparent;            /* Hintergrund */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bitka-accent: #e5e7eb;
+    --bitka-accent-weak: #9ca3af;
+    --bitka-border: #374151;
+    --bitka-bg: #111827;
+  }
+}
+
+.bitka-product-tabs {
+  margin: 2rem 0;
+  background: var(--bitka-bg);
+  color: var(--bitka-accent);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* Nav: dünne Linie, viel Luft */
+.bitka-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--bitka-border);
+}
+
+/* Button: nackt, aber präzise; Underline-Indicator beim Hover/Active */
+.bitka-tab-nav-btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0.875rem 0.5rem;
+  margin: 0 0.5rem;
+  font: 500 0.975rem/1 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--bitka-accent-weak);
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.bitka-tab-nav-btn:hover { color: var(--bitka-accent); }
+
+/* Underline (hover) – fein & kurz */
+.bitka-tab-nav-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -1px;
+  height: 2px;
+  background: currentColor;
+  transition: left 160ms ease, right 160ms ease;
+}
+
+.bitka-tab-nav-btn:hover::after {
+  left: 0;
+  right: 0;
+}
+
+/* Active State: klares Schwarz/Grau & volle Underline */
+.bitka-tab-nav-btn[aria-selected="true"] {
+  color: var(--bitka-accent);
+}
+.bitka-tab-nav-btn[aria-selected="true"]::after {
+  left: 0;
+  right: 0;
+}
+
+/* Tastaturfokus: klare Linie unter dem Button */
+.bitka-tab-nav-btn:focus-visible {
+  outline: none;
+  box-shadow: inset 0 -2px 0 0 currentColor;
+}
+
+/* Content: nur Abstand, kein Shadow, keine Boxen */
+.bitka-tabs-content {
+  padding: 1.25rem 0;
+}
+
+.bitka-tab-content { display: none; }
+.bitka-tab-content.is-active { display: block; }
+
+/* Motion-Respect: sehr dezentes Einblenden */
+@media (prefers-reduced-motion: no-preference) {
+  .bitka-tab-content.is-active {
+    animation: bitka-fade 140ms ease;
+  }
+  @keyframes bitka-fade {
+    from { opacity: 0; transform: translateY(2px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Bitka WooTabs Custom Product Tabs */
+.bitka-product-tabs--custom {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  font-family: inherit;
+}
+.bitka-tabs-list {
+  min-width: 260px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.bitka-tabs-list-item {
+  background: linear-gradient(90deg, #f7fafc 60%, #eaf6ff 100%);
+  border: 1.5px solid #e0e4e8;
+  border-radius: 14px;
+  padding: 1.1rem 1.7rem 1.1rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  font-size: 1.13em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(27,96,156,0.06);
+  transition: background 0.2s, border 0.2s, box-shadow 0.2s, transform 0.15s;
+  position: relative;
+}
+.bitka-tabs-list-item:hover {
+  background: linear-gradient(90deg, #eaf6ff 60%, #d2eaff 100%);
+  border-color: var(--color-main, #1b609c);
+  box-shadow: 0 4px 16px rgba(27,96,156,0.10);
+  transform: translateY(-2px) scale(1.02);
+}
+.bitka-tabs-list-item.is-active {
+  background: linear-gradient(90deg, #eaf6ff 60%, #bfe3ff 100%);
+  border-color: var(--color-main, #1b609c);
+  box-shadow: 0 6px 24px rgba(27,96,156,0.13);
+  transform: scale(1.03);
+}
+.bitka-tabs-list-title {
+  font-weight: 700;
+  flex: 1 1 auto;
+  letter-spacing: 0.01em;
+}
+.bitka-tabs-list-edit {
+  color: var(--color-main, #1b609c);
+  font-size: 0.97em;
+  text-decoration: underline dotted;
+  margin-right: 0.5em;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+.bitka-tabs-list-edit:hover {
+  opacity: 1;
+}
+.bitka-tabs-list-global {
+  color: #f7b500;
+  font-weight: 600;
+  font-size: 0.97em;
+  margin-left: auto;
+  background: #fffbe6;
+  border-radius: 6px;
+  padding: 0.1em 0.7em;
+  box-shadow: 0 1px 2px rgba(247,181,0,0.07);
+  letter-spacing: 0.01em;
+}
+.bitka-tabs-panel {
+  flex: 1 1 0%;
+  background: #fff;
+  border: 1.5px solid #e0e4e8;
+  border-radius: 14px;
+  min-height: 220px;
+  padding: 2.2rem 2.5rem;
+  box-shadow: 0 4px 24px rgba(27,96,156,0.07);
+  animation: fadeInTab 0.3s;
+}
+@keyframes fadeInTab {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+.bitka-tab-content:not(:first-child) { margin-top: 0; }
+
+@media (max-width: 900px) {
+  .bitka-product-tabs--custom {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .bitka-tabs-panel {
+    padding: 1.2rem 1rem;
+  }
+}
+
+
+
+
+
+.bitka-product-main_images{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: fit-content;
+  max-width: 36%;
+}
+
+.bitka-product-gallery {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  margin-top: .5rem;
+  max-width: 100%;
+}
+
+.bitka-product-gallery-item {
+  flex: 0 0 auto;
+}
+
+.bitka-product-gallery img {
+  height: 4rem;
+  width: auto;
+  object-fit: contain;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.bitka-product-gallery img:hover {
+} 

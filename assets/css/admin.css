@@ -1,0 +1,44 @@
+#bitka-woo-tabs-sortable {
+  background: linear-gradient(135deg, #e0e7ff 0%, #f0fdfa 100%);
+  padding: .5rem !important;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.bitka-woo-tab-item {
+  cursor: grab;
+  background: #fff;
+  border-radius: 6px;
+  margin-block: .25rem;
+  margin-inline: .5rem;
+  padding: 12px 18px;
+  box-shadow: 0 1px 3px rgba(30, 41, 59, 0.06);
+  transition: box-shadow 0.2s;
+}
+
+.bitka-woo-tab-item:active {
+  cursor: grabbing;
+  box-shadow: 0 4px 12px rgba(30, 41, 59, 0.12);
+}
+
+/* WooTabs Produktdaten-Tab Icon */
+.woocommerce_options_panel#bitka_woo_tabs_panel:before,
+.woocommerce-product-data ul.wc-tabs li.bitka-woo-tabs-icon a:before {
+  content: "\1F4D6"; /* Buch-Icon als Beispiel */
+  display: inline-block;
+  margin-right: 0.5em;
+  font-size: 1.1em;
+  vertical-align: middle;
+  opacity: 0.85;
+}
+
+.woocommerce-product-data ul.wc-tabs li.bitka-woo-tabs-icon a {
+  padding-left: 1.5em;
+}
+
+
+.bitka-woo-tab-item {
+  display: flex;
+  justify-content: space-between;
+}

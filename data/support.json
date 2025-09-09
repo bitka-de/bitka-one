@@ -1,0 +1,24 @@
+{
+  "company": "Bitka - Webagentur",
+  "website": "https://bitka.de",
+  "address": {
+    "street": "Karlstraße 112",
+    "city": "Karlsruhe",
+    "postalCode": "76137",
+    "country": "Deutschland"
+  },
+  "contact": {
+    "person":{
+      "img": "https://bitka.de/images/jaypiii.jpg",
+      "name": "Jan P. Behrens",
+      "role": "Geschäftsführer"
+    },
+    "email": "info@bitka.de",
+    "phone": "+49 721 - 1745 9908"
+  },
+  "support": {
+    "email": "support@bitka.de",
+    "phone": "+49 721 - 1745 9908",
+    "hours": "Mo-Fr 09:00-17:00"
+  }
+}
